@@ -8,7 +8,6 @@ genai.configure(api_key=TOKEN2)
 model = genai.GenerativeModel('gemini-pro')
 
 
-
 def handle_response(message) -> str:
     p_message = message.lower()
 
