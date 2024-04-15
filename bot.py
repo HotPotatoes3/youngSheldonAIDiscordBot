@@ -54,14 +54,13 @@ def run_discord_bot(discord):
         except Exception as e:
             print(e)
 
-    # responses.slash_response("askpeter", input)
 
-    @bot.tree.command(name='askpeter')
-    @app_commands.describe(input = "What do you want to ask/tell Peter?")
-    async def askpeter(interaction: discord.Interaction, input: str):
+    @bot.tree.command(name='asksheldon')
+    @app_commands.describe(input = "What do you want to ask/tell Sheldon?")
+    async def asksheldon(interaction: discord.Interaction, input: str):
         try:
             await interaction.response.defer()
-            resp = responses.slash_response("askpeter", input)
+            resp = responses.slash_response("asksheldon", input)
             await interaction.followup.send(resp)
         except Exception as e:
             print(e)
@@ -69,7 +68,7 @@ def run_discord_bot(discord):
 
     @bot.tree.command(name='help')
     async def help(interaction: discord.Interaction):
-        await interaction.response.send_message('**Commands:**\n\n**?askpeter {Your question/statement}:** Responds as Peter Griffin from Family Guy')
+        await interaction.response.send_message('**Commands:**\n\n**?asksheldon {Your question/statement}:** Responds as Shelcon Cooper from "Young Sheldon"')
 
 
 
